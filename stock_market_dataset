@@ -1,0 +1,18 @@
+# stock_market_dataset_downloader.py
+
+import os
+from kaggle.api.kaggle_api_extended import KaggleApi
+
+def download_dataset():
+    # Initialize the Kaggle API
+    api = KaggleApi()
+    api.authenticate()
+
+    # Download the dataset
+    dataset_name = "jacksoncrow/stock-market-dataset"
+    api.dataset_download_files(dataset_name, path='./data/stock_market_dataset', unzip=True)
+
+    print("Dataset downloaded successfully!")
+
+if __name__ == "__main__":
+    download_dataset()

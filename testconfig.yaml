@@ -1,0 +1,26 @@
+llms:
+  - name: meta-llama/Llama-3.3-70B-Instruct
+attack_tool: all
+attack_types:
+  - attack_type_1
+  - attack_type_2
+suffix: _test
+write_db: memory_db
+read_db: memory_db
+defense_type: defense_type_1
+injection_method: direct_prompt_injection
+res_file: results/stock_results.csv
+attacker_tools_path: data/stockagent_attack_tools.jsonl
+tasks_path: data/stockagent_task.jsonl
+database: vector_db_stock/
+task_num: 1
+llm_name: meta-llama/Llama-3.3-70B-Instruct
+max_gpu_memory: 20480
+eval_device: cuda
+max_new_tokens: 512
+scheduler_log_mode: console
+agent_log_mode: console
+llm_kernel_log_mode: console
+pot_backdoor: True
+read_db: True
+tools_info: data/stockagent_attack_tools.jsonl

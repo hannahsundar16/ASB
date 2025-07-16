@@ -1,0 +1,55 @@
+# Global Configuration for AIOS
+
+# API Keys Configuration
+api_keys:
+  openai: ""    # OpenAI API key
+  gemini: ""    # Google Gemini API key
+  groq: ""      # Groq API key
+  anthropic: "" # Anthropic API key
+  huggingface:
+    auth_token: ""  # Your HuggingFace auth token for authorized models
+    cache_dir: ""   # Your cache directory for saving huggingface models
+
+# LLM Configuration
+llms:
+  - name: "meta-llama/Llama-3.3-70B-Instruct"
+    base_url: "https://glados.ctisl.gtri.org"
+
+attack_tool:
+  - all
+  - non-agg
+  - agg
+
+attack_types:
+  - combined_attack
+  - fake_completion
+  - escape_characters
+  - naive
+
+suffix: suffix1
+
+memory:
+  log_mode: "console" # choose from [console, file]
+  
+storage:
+  root_dir: "root"
+  use_vector_db: true
+
+tool:
+  mcp_server_script_path: "aios/tool/mcp_server.py"
+
+scheduler:
+  log_mode: "console" # choose from [console, file]
+
+agent_factory:
+  log_mode: "console" # choose from [console, file]
+  max_workers: 64  
+  
+server:
+  host: "localhost"
+  port: 8000
+
+
+
+
+
